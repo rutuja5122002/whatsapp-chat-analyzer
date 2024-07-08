@@ -135,14 +135,9 @@ if uploaded_file is not None:
         with col2:
             top_emojis = emoji_df.head(5)
             fig, ax = plt.subplots()
-            try:
-                # Attempt to use the specified font
-                prop = FontProperties(fname='C:/Windows/Fonts/seguiemj.ttf')
-            except FileNotFoundError:
-                # Fallback to default font properties if the specified font is not found
-                prop = FontProperties()
-            ax.pie(top_emojis['Count'], labels=top_emojis['Emoji'], autopct='%1.1f%%', startangle=140, textprops={'fontproperties': prop})
+            ax.pie(top_emojis['Count'], labels=top_emojis['Emoji'], autopct='%1.1f%%', startangle=140
             st.pyplot(fig)
+
 
 
 
