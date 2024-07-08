@@ -128,5 +128,6 @@ if uploaded_file is not None:
         with col2:
             top_emojis = emoji_df.head(5)
             fig, ax = plt.subplots()
-            ax.pie(top_emojis['Count'], labels=top_emojis['Emoji'], autopct='%1.1f%%', startangle=140)
+            ax.bar(top_emojis['Emoji'], top_emojis['Count'])
+            plt.xticks(rotation='vertical')
             st.pyplot(fig)
